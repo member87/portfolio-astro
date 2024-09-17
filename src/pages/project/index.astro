@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const projects = await getCollection("project");
+import TechLabel from "../../components/TechLabel.astro";
+---
+
+<Layout>
+  <section>
+    <ul
+      class="mx-auto grid max-w-[800px] grid-cols-1 gap-4 px-2 md:grid-cols-2"
+    >
+      {
+        projects.map((project) => (
+          <li class="rounded border bg-neutral-50 shadow-sm transition hover:shadow-md">
+            <a href=`/project/${project.slug}` class="group block p-4">
+              <h4 class="font-semibold transition group-hover:text-blue-600 ">
+                {project.data.title}
+              </h4>
+              <span class="text-sm transition group-hover:text-blue-700">
+                {project.data.description}
+              </span>
+              <div class="mt-2 flex gap-2">
+                {project.data?.tech &&
+                project.data.tech.map((tech) => (
+                <TechLabel tech={tech} />
+                  ))}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

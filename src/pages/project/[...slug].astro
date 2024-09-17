@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("project");
+  console.log(projects);
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+type Props = CollectionEntry<"project">;
+
+const project = Astro.props;
+const { Content } = await project.render();
+---
+
+<Layout>
+  <article>
+    <div class="prose mx-auto">
+      <div class="title">
+        <h1 class="text-center">
+          {project.data.title}
+        </h1>
+        <div class="flex items-center">
+          <div
+            class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
+          >
+            <Icon name="simple-icons:github" class="text-3xl" />
+            <span class="mr-2">View on GitHub</span>
+          </div>
+        </div>
+
+        <hr />
+      </div>
+      <Content />
+    </div>
+  </article>
+</Layout>

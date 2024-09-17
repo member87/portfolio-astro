@@ -1,0 +1,89 @@
+---
+interface Props {
+  tech: string;
+}
+
+const { tech } = Astro.props;
+import { Icon } from "astro-icon/components";
+
+const icons: {
+  [key: string]: {
+    icon: string;
+    color: string;
+  };
+} = {
+  React: {
+    icon: "simple-icons:react",
+    color: "bg-[#61DAFB]",
+  },
+  Typescript: {
+    icon: "simple-icons:typescript",
+    color: "bg-[#3178C6] text-white",
+  },
+  NextJS: {
+    icon: "simple-icons:nextdotjs",
+    color: "bg-[#000000] text-white",
+  },
+  S3: {
+    icon: "simple-icons:amazons3",
+    color: "bg-[#569A31] text-white",
+  },
+  Postgres: {
+    icon: "simple-icons:postgresql",
+    color: "bg-[#4169E1] text-white",
+  },
+  Neovim: {
+    icon: "simple-icons:neovim",
+    color: "bg-[#57A143] text-white",
+  },
+  Lua: {
+    icon: "simple-icons:lua",
+    color: "bg-[#2C2D72] text-white",
+  },
+  Astro: {
+    icon: "simple-icons:astro",
+    color: "bg-[#BC52EE] text-white",
+  },
+  TailwindCSS: {
+    icon: "simple-icons:tailwindcss",
+    color: "bg-[#06B6D4] text-white",
+  },
+  Selenium: {
+    icon: "simple-icons:selenium",
+    color: "bg-[#43B02A] text-white",
+  },
+  Python: {
+    icon: "simple-icons:python",
+    color: "bg-[#3776AB] text-white",
+  },
+  PHP: {
+    icon: "simple-icons:php",
+    color: "bg-[#777BB4] text-white",
+  },
+  Vue: {
+    icon: "simple-icons:vuedotjs",
+    color: "bg-[#4FC08D]",
+  },
+  JavaScript: {
+    icon: "simple-icons:javascript",
+    color: "bg-[#F7DF1E]",
+  },
+  Rust: {
+    icon: "simple-icons:rust",
+    color: "bg-[#000000] text-white",
+  },
+  "C++": {
+    icon: "simple-icons:cplusplus",
+    color: "bg-[#00599C] text-white",
+  },
+};
+---
+
+<span class={"rounded border px-2 py-1 text-xs " + icons[tech]?.color}>
+  {
+    icons[tech] && (
+      <Icon name={icons[tech].icon} class="w-4 h-4 inline-block mr-1" />
+    )
+  }
+  {tech}
+</span>
