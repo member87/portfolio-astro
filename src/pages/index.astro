@@ -1,6 +1,16 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import { NAME } from "../consts";
+const experience = await getCollection("experience");
+import TechLabel from "../components/TechLabel.astro";
+
+const calculateDuration = (start: Date, end: Date) => {
+  const duration =
+    (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30);
+  if (duration > 12) return `${(duration / 12).toFixed(1)} years`;
+  return `${duration.toFixed(1)} months`;
+};
 ---
 
 <Layout>
@@ -25,6 +35,55 @@ import { NAME } from "../consts";
           React.
         </p>
       </div>
+    </div>
+    <div
+      class="relative z-30 mx-auto mb-32 max-w-[1000px] rounded bg-white/30 p-2 shadow-sm"
+    >
+      <h2 class="my-8 text-center text-2xl font-semibold">Work Experience</h2>
+      {
+        experience.map(async (exp) => {
+          const { Content } = await exp.render();
+          return (
+            <div class="p-6 md:flex">
+              <div>
+                <h3 class="mb-2 text-lg">
+                  <span>{exp.data.company}</span>
+                  <span class="md:hidden">-</span>
+                  <span class="font-semibold  md:block">
+                    {exp.data.jobTitle}
+                  </span>
+                </h3>
+                <div class="inline whitespace-nowrap rounded border border-green-400/50 bg-green-200/40 px-2 py-1 text-xs text-black/60">
+                  {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
+                    month: "long",
+                    year: "numeric",
+                  })}
+                  -
+                  {exp.data.endDate
+                    ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
+                        month: "long",
+                        year: "numeric",
+                      })
+                    : "Present"}
+                  <span class="ml-2 whitespace-nowrap text-xs text-gray-500">
+                    {calculateDuration(
+                      new Date(exp.data.startDate),
+                      new Date(exp.data.endDate ?? new Date()),
+                    )}
+                  </span>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {exp.data.tech &&
+                    exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
+                </div>
+              </div>
+              <div class="prose mt-4 md:mt-0">
+                <Content />
+              </div>
+            </div>
+          );
+        })
+      }
     </div>
   </main>
 </Layout>

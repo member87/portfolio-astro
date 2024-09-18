@@ -5,7 +5,6 @@ import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
   const projects = await getCollection("project");
-  console.log(projects);
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: project,
