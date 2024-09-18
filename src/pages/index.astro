@@ -5,8 +5,9 @@ import { NAME } from "../consts";
 const experience = await getCollection("experience");
 import TechLabel from "../components/TechLabel.astro";
 
-const calculateDuration = (start, end) => {
-  const duration = (end - start) / (1000 * 60 * 60 * 24 * 30);
+const calculateDuration = (start: Date, end: Date) => {
+  const duration =
+    (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30);
   if (duration > 12) return `${(duration / 12).toFixed(1)} years`;
   return `${duration.toFixed(1)} months`;
 };
