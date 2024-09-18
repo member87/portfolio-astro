@@ -24,4 +24,15 @@ const project = defineCollection({
   }),
 });
 
-export const collections = { blog, project };
+const experience = defineCollection({
+  type: "content",
+  schema: z.object({
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(),
+    company: z.string(),
+    jobTitle: z.string(),
+    tech: z.string().array().optional(),
+  }),
+});
+
+export const collections = { blog, project, experience };
