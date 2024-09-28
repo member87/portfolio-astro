@@ -2,6 +2,7 @@
 title: "Cam Finder"
 description: "Find ACTi NV3.0 cameras with factroy defualt passwords."
 tech: ["Python", "Censys", "Shodan"]
+url: "cam-finder"
 ---
 
 Cam finder is a tool written in Python to find a list of

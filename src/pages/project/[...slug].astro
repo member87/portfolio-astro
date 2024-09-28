@@ -23,18 +23,22 @@ const { Content } = await project.render();
         <h1 class="text-center">
           {project.data.title}
         </h1>
-        <div class="flex items-center">
-          <div
-            class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
-          >
-            <Icon name="simple-icons:github" class="text-3xl" />
-            <span class="mr-2">View on GitHub</span>
-          </div>
-        </div>
 
         <hr />
       </div>
+
       <Content />
+      {
+        project.data?.url && (
+          <a
+            href={`https://github.com/member87/${project.data.url}`}
+            class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
+          >
+            <Icon name="simple-icons:github" class="text-xl" />
+            <span class="mr-2 text-sm">View on GitHub</span>
+          </a>
+        )
+      }
     </div>
   </article>
 </Layout>

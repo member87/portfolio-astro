@@ -2,6 +2,7 @@
 title: "Image Upload Server"
 description: "Image file server for uploading screenshots to."
 tech: ["NextJS", "React", "S3", "Postgres"]
+url: "image-upload-server"
 ---
 
 Image upload server is a small project written in NextJS and React.
