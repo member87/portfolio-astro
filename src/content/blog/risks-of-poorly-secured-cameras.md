@@ -100,7 +100,7 @@ The implications of a compromised camera system are shocking. A bad actor could 
 for anything from petty vandalism to a physical break-in—then delete the evidence. At the time of
 writing, I’ve identified over 600 exposed cameras, many in homes and businesses.
 
-## How to Secure Cameras (or anything IOT): Best Practices
+## How to Secure Cameras (or anything IOT)
 
 -   **Defualt Passwords**: Any password that comes defualt with your device should
     be changed as soon as possible.
