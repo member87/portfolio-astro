@@ -16,11 +16,17 @@ const styles: {
 };
 
 const getStyle = (type: string) => {
-  // check if srtyles object contains type
   if (!styles[type] || !styles[type].class) {
     throw new Error(`Type ${type} is not defined`);
   }
   return styles[type].class;
+};
+
+const getIcon = (type: string) => {
+  if (!styles[type]) {
+    throw new Error(`Type ${type} is not defined`);
+  }
+  return styles[type];
 };
 
 import { Icon } from "astro-icon/components";
@@ -30,8 +36,8 @@ import { Icon } from "astro-icon/components";
   class=`px-3 py-4 rounded shadow not-prose grid grid-cols-[max-content,1fr] gap-2 ${getStyle(type)}`
 >
   <Icon
-    name={styles[type].icon}
-    class={`w-6 h-6 text-3xl ${styles[type].iconColor}`}
+    name={getIcon(type).icon}
+    class={`w-6 h-6 text-3xl ${getIcon(type).iconColor}`}
   />
   <slot />
 </div>
