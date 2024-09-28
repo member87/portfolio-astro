@@ -22,6 +22,7 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@iconify-json/ic": "^1.2.0",
     "@iconify-json/simple-icons": "^1.2.2",
     "@tailwindcss/typography": "^0.5.15",
     "astro-icon": "^1.1.1",

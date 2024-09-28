@@ -6,6 +6,8 @@ heroImage: "/blog-placeholder-1.jpg"
 tags: ["Cyber Security", "IOT", "Python"]
 ---
 
+import Alert from "../../components/Alert.astro";
+
 We all know that leaving default passwords active is a bad idea, but it can be even more risky on
 security cameras. With such a simple oversight you are allowing intuders into your home or business
 and loosing all privacy.
@@ -13,8 +15,10 @@ and loosing all privacy.
 Despite this being such an easy fix (just change the password!), many people end up skipping this step.
 This results in their "secure" cameras becoming easily exploited by attackers.
 
-> The information below is intended for educational purposes only. Never attempt to access any computer
-> system without explicit permission.
+<Alert type="warning">
+  The information below is intended for educational purposes only. Never attempt
+  to access any computer system without explicit permission.
+</Alert>
 
 ## How Attackers Find Exposed Cameras
 
@@ -85,14 +89,14 @@ automate the whole process - avaiable on my [GitHub](https://github.com/member87
 
 Once logged in as an admin, the attacker will have full control over the cameras. This includes:
 
--   **Live Viewing & Playback**: Watch the cameras in real time and previous historical recorings.
-    If the camera also has audio support, they would also be able to hear conversations.
--   **Camera Management**: Rename, delete, and confiure camera settings.
--   **Storage Control**: Delete previous recordings and reserve all disk space to prevent any
-    new recordings
--   **Camera Direction**: There are a few models of cameras that will allow you to rotate the
-    position, potentially watching sensitive areas.
--   **User Management**: Add, delete, or modify user accounts.
+- **Live Viewing & Playback**: Watch the cameras in real time and previous historical recorings.
+  If the camera also has audio support, they would also be able to hear conversations.
+- **Camera Management**: Rename, delete, and confiure camera settings.
+- **Storage Control**: Delete previous recordings and reserve all disk space to prevent any
+  new recordings
+- **Camera Direction**: There are a few models of cameras that will allow you to rotate the
+  position, potentially watching sensitive areas.
+- **User Management**: Add, delete, or modify user accounts.
 
 ## Potential Impact of Poor Security
 
@@ -102,10 +106,10 @@ writing, I’ve identified over 600 exposed cameras, many in homes and businesse
 
 ## How to Secure Cameras (or anything IOT)
 
--   **Defualt Passwords**: Any password that comes defualt with your device should
-    be changed as soon as possible.
--   **Limit Internet Exposure**: Don't make your devices avaible publically on the
-    internet unless absouletly required. In these cases there should be sufficent
-    security measures in place preventing public access.
--   **IP Whitelist or VPN**: If you need remote access, limit which IPs can have access
-    or use a VPN to securly connect.
+- **Defualt Passwords**: Any password that comes defualt with your device should
+  be changed as soon as possible.
+- **Limit Internet Exposure**: Don't make your devices avaible publically on the
+  internet unless absouletly required. In these cases there should be sufficent
+  security measures in place preventing public access.
+- **IP Whitelist or VPN**: If you need remote access, limit which IPs can have access
+  or use a VPN to securly connect.

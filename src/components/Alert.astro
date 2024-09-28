@@ -1,0 +1,43 @@
+---
+const { type } = Astro.props;
+
+const styles: {
+  [key: string]: {
+    class: string;
+    icon: string;
+    iconColor: string;
+  };
+} = {
+  warning: {
+    class: "bg-yellow-100",
+    icon: "ic:round-warning",
+    iconColor: "text-yellow-600",
+  },
+};
+
+const getStyle = (type: string) => {
+  if (!styles[type] || !styles[type].class) {
+    throw new Error(`Type ${type} is not defined`);
+  }
+  return styles[type].class;
+};
+
+const getIcon = (type: string) => {
+  if (!styles[type]) {
+    throw new Error(`Type ${type} is not defined`);
+  }
+  return styles[type];
+};
+
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class=`px-3 py-4 rounded shadow not-prose grid grid-cols-[max-content,1fr] gap-2 ${getStyle(type)}`
+>
+  <Icon
+    name={getIcon(type).icon}
+    class={`w-6 h-6 text-3xl ${getIcon(type).iconColor}`}
+  />
+  <slot />
+</div>
