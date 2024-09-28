@@ -2,6 +2,7 @@
 title: "Astro Portfolio"
 description: "Personal portfolio website built with Astro."
 tech: ["Astro", "TailwindCSS", "Typescript"]
+loadFactor: 1
 ---
 
 Astro portfolio is my thrid rewrite of my personal porfolio (_the one you're on now!_).

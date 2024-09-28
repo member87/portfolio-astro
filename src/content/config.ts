@@ -21,6 +21,7 @@ const project = defineCollection({
     tech: z.string().array().optional(),
     github: z.string().optional(),
     url: z.string().optional(),
+    loadFactor: z.number(),
   }),
 });
 

@@ -2,11 +2,15 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
-const projects = await getCollection("project");
+const projects = (await getCollection("project")).sort(
+  (a, b) => a.data.loadFactor - b.data.loadFactor
+);
+
+
 import TechLabel from "../../components/TechLabel.astro";
 ---
 
-<Layout>
+<Layout title="Projects">
   <section>
     <ul
       class="mx-auto grid max-w-[800px] grid-cols-1 gap-4 px-2 md:grid-cols-2"

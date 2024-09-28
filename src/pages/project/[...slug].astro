@@ -16,7 +16,7 @@ const project = Astro.props;
 const { Content } = await project.render();
 ---
 
-<Layout>
+<Layout title={project.data.title}>
   <article>
     <div class="prose mx-auto">
       <div class="title">

@@ -3,6 +3,7 @@ title: "NextJS Portfolio"
 description: "Personal portfolio written in NextJS and react."
 tech: ["NextJS", "React", "Typescript"]
 url: "portfolio-next"
+loadFactor: 10
 ---
 
 My NextJS portfolio was my second iteration of my personal portfolios.

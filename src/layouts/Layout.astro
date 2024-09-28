@@ -4,12 +4,14 @@ import "../styles/global.css";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html>
   <head>
-    <BaseHead title="test" description="test" />
+    <BaseHead title={`${title} - Jack`} description="test" />
     <ViewTransitions />
   </head>
 
