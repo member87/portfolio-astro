@@ -3,6 +3,7 @@ title: "MemUI"
 description: "UI library built with lua for game Garry's Mod."
 tech: ["Lua"]
 url: "memui"
+loadFactor: 10
 ---
 
 MemUI was one of the first ever projects I created. You can easily create

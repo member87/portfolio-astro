@@ -3,6 +3,7 @@ title: "Neovim Config"
 description: "Configuration files for my Neovim config."
 tech: ["Lua", "Neovim"]
 url: "nvim"
+loadFactor: 10
 ---
 
 Neovim is my text editor of choice. This project is a Lua
