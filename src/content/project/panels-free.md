@@ -2,7 +2,7 @@
 title: "Panels Free"
 description: "Publically accessible wallpapers from the MKBHD Panels app"
 tech: ["NextJS", "React"]
-url: "nvim"
+url: "panels-free"
 loadFactor: 5
 ---
 
