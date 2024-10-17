@@ -2,6 +2,7 @@
 title: "Astro Portfolio"
 description: "Personal portfolio website built with Astro."
 tech: ["Astro", "TailwindCSS", "Typescript"]
+url: "portfolio-astro"
 loadFactor: 1
 ---
 
