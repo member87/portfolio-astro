@@ -16,23 +16,25 @@ const posts = (await getCollection("blog")).sort(
           <li>
             <a
               href={`/blog/${post.slug}/`}
-              class="block rounded border bg-neutral-50 shadow-sm"
+              class="block rounded border border-border bg-muted shadow-sm"
             >
               <div class="p-4">
                 <p class="text-sm text-green-600">
                   <FormattedDate date={post.data.pubDate} />
                 </p>
                 <h4
-                  class="py-2 text-lg font-semibold"
+                  class="py-2 text-lg font-semibold text-foreground"
                   transition:name={post.data.title}
                 >
                   {post.data.title}
                 </h4>
-                <p class="text-sm text-black/80">{post.data.description}</p>
+                <p class="text-sm text-foreground/80">
+                  {post.data.description}
+                </p>
                 {post.data.tags && (
                   <div class="mt-4 flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="rounded border px-2 py-1 text-xs text-green-800">
+                      <span class="rounded border border-background px-2 py-1 text-xs text-green-700">
                         {tag}
                       </span>
                     ))}

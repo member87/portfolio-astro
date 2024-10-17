@@ -28,8 +28,8 @@ const calculateDuration = (start: Date, end: Date) => {
 
     <div class="relative z-30 flex min-h-[600px] items-center justify-center">
       <div class="max-w-[600px] px-4">
-        <h1 class="mb-4 text-6xl">{NAME}</h1>
-        <p class="text-lg leading-loose text-gray-900">
+        <h1 class="mb-4 text-6xl text-foreground">{NAME}</h1>
+        <p class="text-lg leading-loose text-foreground/90">
           I'm a fullstack web developer currently working with Laravel and PHP
           professionaly. In all my personal projects I primarily use NextJS and
           React.
@@ -37,7 +37,7 @@ const calculateDuration = (start: Date, end: Date) => {
       </div>
     </div>
     <div
-      class="relative z-30 mx-auto mb-32 max-w-[1000px] rounded bg-white/30 p-2 shadow-sm"
+      class="relative z-30 mx-auto mb-32 max-w-[1000px] rounded bg-muted/40 p-2 shadow-sm text-foreground"
     >
       <h2 class="my-8 text-center text-2xl font-semibold">Work Experience</h2>
       {
@@ -53,7 +53,7 @@ const calculateDuration = (start: Date, end: Date) => {
                     {exp.data.jobTitle}
                   </span>
                 </h3>
-                <div class="inline whitespace-nowrap rounded border border-green-400/50 bg-green-200/40 px-2 py-1 text-xs text-black/60">
+                <div class="inline whitespace-nowrap rounded border border-green-400/50 bg-green-200/40 px-2 py-1 text-xs text-foreground/90">
                   {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
                     month: "long",
                     year: "numeric",
@@ -65,7 +65,7 @@ const calculateDuration = (start: Date, end: Date) => {
                         year: "numeric",
                       })
                     : "Present"}
-                  <span class="ml-2 whitespace-nowrap text-xs text-gray-500">
+                  <span class="ml-2 whitespace-nowrap text-xs text-foreground">
                     {calculateDuration(
                       new Date(exp.data.startDate),
                       new Date(exp.data.endDate ?? new Date()),
@@ -77,7 +77,7 @@ const calculateDuration = (start: Date, end: Date) => {
                     exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
                 </div>
               </div>
-              <div class="prose mt-4 md:mt-0">
+              <div class="prose mt-4 md:mt-0 dark:prose-invert">
                 <Content />
               </div>
             </div>
