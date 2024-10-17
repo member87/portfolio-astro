@@ -17,12 +17,12 @@ import TechLabel from "../../components/TechLabel.astro";
     >
       {
         projects.map((project) => (
-          <li class="rounded border bg-neutral-50 shadow-sm transition hover:shadow-md">
-            <a href=`/project/${project.slug}` class="group block p-4">
-              <h4 class="font-semibold transition group-hover:text-blue-600 ">
+          <li class="rounded border border-border bg-muted text-foreground shadow-sm hover:shadow-md">
+            <a href=`/project/${project.slug}` class="block p-4">
+              <h4 class="font-semibold">
                 {project.data.title}
               </h4>
-              <span class="text-sm transition group-hover:text-blue-700">
+              <span class="text-sm">
                 {project.data.description}
               </span>
               <div class="mt-2 flex gap-2">

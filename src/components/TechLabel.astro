@@ -5,6 +5,7 @@ interface Props {
 
 const { tech } = Astro.props;
 import { Icon } from "astro-icon/components";
+import { twMerge } from "tailwind-merge";
 
 const icons: {
   [key: string]: {
@@ -14,7 +15,7 @@ const icons: {
 } = {
   React: {
     icon: "simple-icons:react",
-    color: "bg-[#61DAFB]",
+    color: "bg-[#61DAFB] text-black",
   },
   Typescript: {
     icon: "simple-icons:typescript",
@@ -62,11 +63,11 @@ const icons: {
   },
   Vue: {
     icon: "simple-icons:vuedotjs",
-    color: "bg-[#4FC08D]",
+    color: "bg-[#4FC08D] text-black",
   },
   JavaScript: {
     icon: "simple-icons:javascript",
-    color: "bg-[#F7DF1E]",
+    color: "bg-[#F7DF1E] text-black",
   },
   Rust: {
     icon: "simple-icons:rust",
@@ -87,7 +88,12 @@ const icons: {
 };
 ---
 
-<span class={"rounded border px-2 py-1 text-xs " + icons[tech]?.color}>
+<span
+  class={twMerge(
+    "rounded border px-2 py-1 text-xs border-border bg-background",
+    icons[tech]?.color,
+  )}
+>
   {
     icons[tech] && (
       <Icon name={icons[tech].icon} class="w-4 h-4 inline-block mr-1" />
