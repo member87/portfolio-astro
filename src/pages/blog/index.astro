@@ -16,7 +16,7 @@ const posts = (await getCollection("blog")).sort(
           <li>
             <a
               href={`/blog/${post.slug}/`}
-              class="block rounded border border-border bg-muted shadow-sm"
+              class="block rounded border border-border bg-muted/60 shadow-sm"
             >
               <div class="p-4">
                 <p class="text-sm text-green-600">
@@ -34,7 +34,7 @@ const posts = (await getCollection("blog")).sort(
                 {post.data.tags && (
                   <div class="mt-4 flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="rounded border border-background px-2 py-1 text-xs text-green-700">
+                      <span class="rounded px-2 py-1 text-xs text-green-600/80 ">
                         {tag}
                       </span>
                     ))}

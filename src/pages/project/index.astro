@@ -17,7 +17,7 @@ import TechLabel from "../../components/TechLabel.astro";
     >
       {
         projects.map((project) => (
-          <li class="rounded border border-border bg-muted text-foreground shadow-sm hover:shadow-md">
+        <li class="rounded border border-border bg-muted/60 text-foreground shadow-sm hover:shadow-md">
             <a href=`/project/${project.slug}` class="block p-4">
               <h4 class="font-semibold">
                 {project.data.title}

@@ -6,6 +6,8 @@ url: "cam-finder"
 loadFactor: 1
 ---
 
+[![asciicast](https://asciinema.org/a/505401.svg)](https://asciinema.org/a/505401)
+
 Cam finder is a tool written in Python to find a list of
 Acti NVR 3.0 cameras are exposed to the internet with the
 factory default logins.
