@@ -90,8 +90,14 @@ import TechLabel from "../components/TechLabel.astro";
     const calculateDuration = (start, end) => {
       const duration =
         (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30);
-      if (duration > 12) return `${(duration / 12).toFixed(1)} years`;
-      return `${duration.toFixed(1)} months`;
+
+      const years = Math.floor(totalMonths / 12);
+      const months = Math.round(totalMonths % 12);
+
+      if (years > 0) {
+        return `${years} year${years > 1 ? "s" : ""} and ${months} month${months !== 1 ? "s" : ""}`;
+      }
+      return `${months} month${months !== 1 ? "s" : ""}`;
     };
 
     // Run this code after the page is fully loaded
