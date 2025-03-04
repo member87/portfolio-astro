@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import { NAME } from "../consts";
 const experience = await getCollection("experience");
 import TechLabel from "../components/TechLabel.astro";
+
+import { Content as Intro } from "./intro.md";
 ---
 
 <Layout title="Home">
@@ -21,6 +23,11 @@ import TechLabel from "../components/TechLabel.astro";
           professionally. In all my personal projects I primarily use NextJS and
           React.
         </p>
+      </div>
+      <div
+        class="hidden rounded border-2 border-border md:block [&>*]:p-4 [&>*]:px-8"
+      >
+        <Intro />
       </div>
     </div>
   </div>

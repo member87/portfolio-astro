@@ -14,7 +14,7 @@ are setup include:
 -   Completion
 -   Telescope for fuzzy search and file finding
 -   Formatting Tools
--   Copiliot
+-   Copilot
 -   Lazy Plugin Manager
 -   Full list on [GitHub](http://github.com/member87/nvim)
 
