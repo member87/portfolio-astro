@@ -19,7 +19,7 @@ maim -s | base64 | jq --slurp -R '{input: ., "key": "<hidden>"}' | curl -X POST 
 notify-send "Screenshot uploaded and URL copied to clipboard"
 ```
 
-There is a admin dashboard which allows you to login and manage
+There is an admin dashboard which allows you to login and manage
 all your images. You can view when they were created and delete them.
 
 The upload server is hosted on Vercel and all images are

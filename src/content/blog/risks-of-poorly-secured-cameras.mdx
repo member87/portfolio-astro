@@ -9,8 +9,8 @@ tags: ["Cyber Security", "IOT", "Python"]
 import Alert from "../../components/Alert.astro";
 
 We all know that leaving default passwords active is a bad idea, but it can be even more risky on
-security cameras. With such a simple oversight you are allowing intuders into your home or business
-and loosing all privacy.
+security cameras. With such a simple oversight you are allowing intruders into your home or business
+and losing all privacy.
 
 Despite this being such an easy fix (just change the password!), many people end up skipping this step.
 This results in their "secure" cameras becoming easily exploited by attackers.
@@ -22,8 +22,8 @@ This results in their "secure" cameras becoming easily exploited by attackers.
 
 ## How Attackers Find Exposed Cameras
 
-Using powerful search engines like Shodan and Censys, it makes finding interent connected devices
-trivial. Unlike your regular seach engine (eg google), these search engines are used to find
+Using powerful search engines like Shodan and Censys, it makes finding internet connected devices
+trivial. Unlike your regular search engine (eg google), these search engines are used to find
 IOT devices, meaning any device connected to the internet. We can utilize these to search for
 **ACTi NVR3.0 devices** - a popular camera. If we use Censys to search for the term "NVR3.0"
 we can see 1000s of results are returned.
@@ -36,7 +36,7 @@ But why do this manually when it can be automated?
 
 ## Automating the Search
 
-Shodan and Censys both provide convient APIs to search through their databases. The API will return
+Shodan and Censys both provide convenient APIs to search through their databases. The API will return
 detailed data including: IP, open ports, latitude, longitude, etc. Using this data makes searching
 easy. Here is a simple Python script to demonstrate how the Shodan API can be used:
 
@@ -72,7 +72,7 @@ $ echo YWRtaW46MTIzNDU2 | base64 --decode                                       
 ```
 
 The decoded string includes the username and password that we entered in the login
-page. With this information an attacker can programatically attempt to login:
+page. With this information an attacker can programmatically attempt to login:
 
 ```python
 r = requests.get(f"http://{server}/Media/UserGroup/login?response_format=json", headers={"Authorization": "Basic YWRtaW46MTIzNDU2" }, timeout=10)
@@ -83,15 +83,15 @@ if(r.status_code == 200):
 We can just check the response from the login requests and check it matches the
 status code "200" (meaning successful login). At this point an attacker can then
 login to the camera and view it. I've put together a script that will
-automate the whole process - avaiable on my [GitHub](https://github.com/member87/cam-finder)
+automate the whole process - available on my [GitHub](https://github.com/member87/cam-finder)
 
 ## What Can Attackers Access?
 
 Once logged in as an admin, the attacker will have full control over the cameras. This includes:
 
-- **Live Viewing & Playback**: Watch the cameras in real time and previous historical recorings.
+- **Live Viewing & Playback**: Watch the cameras in real time and previous historical recordings.
   If the camera also has audio support, they would also be able to hear conversations.
-- **Camera Management**: Rename, delete, and confiure camera settings.
+- **Camera Management**: Rename, delete, and configure camera settings.
 - **Storage Control**: Delete previous recordings and reserve all disk space to prevent any
   new recordings
 - **Camera Direction**: There are a few models of cameras that will allow you to rotate the
@@ -106,10 +106,10 @@ writing, I’ve identified over 600 exposed cameras, many in homes and businesse
 
 ## How to Secure Cameras (or anything IOT)
 
-- **Defualt Passwords**: Any password that comes defualt with your device should
+- **Default Passwords**: Any password that comes default with your device should
   be changed as soon as possible.
-- **Limit Internet Exposure**: Don't make your devices avaible publically on the
-  internet unless absouletly required. In these cases there should be sufficent
+- **Limit Internet Exposure**: Don't make your devices available publically on the
+  internet unless absolutely required. In these cases there should be sufficient
   security measures in place preventing public access.
 - **IP Whitelist or VPN**: If you need remote access, limit which IPs can have access
-  or use a VPN to securly connect.
+  or use a VPN to securely connect.

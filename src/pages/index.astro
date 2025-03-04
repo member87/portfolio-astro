@@ -7,19 +7,13 @@ import TechLabel from "../components/TechLabel.astro";
 ---
 
 <Layout title="Home">
-  <main>
-    <div class="relative z-0 opacity-40 blur-[128px]">
-      <div
-        class="absolute left-0 size-[800px] max-w-full rounded-full bg-sky-500/40 md:left-12"
-      >
-      </div>
-      <div
-        class="absolute right-12 hidden size-[800px] rounded-full bg-green-500/40 md:block"
-      >
-      </div>
-    </div>
-
-    <div class="relative z-30 flex min-h-[600px] items-center justify-center">
+  <div
+    class="relative items-center justify-center border-b-2 border-dashed border-border"
+  >
+    <div class="grid-bg"></div>
+    <div
+      class="relative z-20 flex min-h-[600px] items-center justify-center border-x-2 border-dashed border-border p-4 sm:mx-12"
+    >
       <div class="max-w-[600px] px-4">
         <h1 class="mb-4 text-6xl text-foreground">{NAME}</h1>
         <p class="text-lg leading-loose text-foreground/90">
@@ -29,44 +23,52 @@ import TechLabel from "../components/TechLabel.astro";
         </p>
       </div>
     </div>
+  </div>
 
-    <div
-      class="relative z-30 mx-auto mb-32 max-w-[1000px] rounded bg-background/40 p-2 text-foreground shadow-sm backdrop-blur-2xl"
-    >
-      <h2 class="my-8 text-center text-2xl font-semibold">Work Experience</h2>
+  <div
+    class="relative z-30 mb-12 border-b-2 border-dashed border-border text-foreground shadow-sm backdrop-blur-2xl sm:px-12"
+  >
+    <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
+      <div class="mx-auto max-w-[1000px]">
+        <h2 class="text-2xl font-semibold">Work Experience</h2>
+        <div class="mb-12"></div>
 
-      {
-        experience.map(async (exp) => {
-          const { Content } = await exp.render();
+        {
+          experience.map(async (exp) => {
+            const { Content } = await exp.render();
 
-          return (
-            <div class="p-6 md:flex">
-              <div>
-                <h3 class="mb-2 text-lg">
-                  <span>{exp.data.company}</span>
-                  <span class="md:hidden">-</span>
-                  <span class="font-semibold md:block">
-                    {exp.data.jobTitle}
-                  </span>
-                </h3>
+            return (
+              <div class="">
+                <div class="flex flex-col sm:flex-row">
+                  <div class="flex flex-1 gap-1">
+                    <h3 class="mb-2 text-lg">
+                      {exp.data.company}
+                      <span class="font-semibold ">- {exp.data.jobTitle}</span>
+                    </h3>
+                  </div>
 
-                <div class="inline whitespace-nowrap rounded border border-green-400/50 bg-green-200/40 px-2 py-1 text-xs text-foreground/90">
-                  {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
-                    month: "long",
-                    year: "numeric",
-                  })}
-                  -{" "}
-                  {exp.data.endDate
-                    ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
-                        month: "long",
-                        year: "numeric",
-                      })
-                    : "Present"}
-                  <span
-                    class="duration-span ml-2 whitespace-nowrap text-xs text-foreground"
-                    data-start={exp.data.startDate}
-                    data-end={exp.data.endDate ? exp.data.endDate : null}
-                  />
+                  <div class="inline whitespace-nowrap rounded  px-2 py-1 text-xs text-foreground/90">
+                    {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
+                      month: "long",
+                      year: "numeric",
+                    })}
+                    -{" "}
+                    {exp.data.endDate
+                      ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
+                          month: "long",
+                          year: "numeric",
+                        })
+                      : "Present"}
+                    <span
+                      class="duration-span ml-2 whitespace-nowrap text-xs text-foreground"
+                      data-start={exp.data.startDate}
+                      data-end={exp.data.endDate ? exp.data.endDate : null}
+                    />
+                  </div>
+                </div>
+
+                <div class="prose mt-4 max-w-full dark:prose-invert md:mt-0">
+                  <Content />
                 </div>
 
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -74,16 +76,12 @@ import TechLabel from "../components/TechLabel.astro";
                     exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
                 </div>
               </div>
-
-              <div class="prose mt-4 dark:prose-invert md:mt-0">
-                <Content />
-              </div>
-            </div>
-          );
-        })
-      }
+            );
+          })
+        }
+      </div>
     </div>
-  </main>
+  </div>
 
   <script is:inline>
     // Client-side function to calculate the duration between two dates

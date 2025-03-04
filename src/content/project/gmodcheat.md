@@ -11,4 +11,4 @@ to allow Lua injection.
 
 In addition to Lua injection, it saves all client Lua files to a directory when
 you join public servers. Having these files saved lets you read through them
-which makes exploting poorly written plugins easier.
+which makes exploiting poorly written plugins easier.

@@ -13,7 +13,7 @@ Current features:
 
 -   Buttons
 -   Rounded Buttons
--   Contianers
+-   Containers
 -   Headers
 -   Context Menu
 -   Dropdowns

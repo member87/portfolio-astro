@@ -17,21 +17,32 @@ const { Content } = await post.render();
 ---
 
 <Layout {...post.data}>
-  <div class="prose dark:prose-invert mx-auto px-6">
-    <div class="title">
-      <div class="date">
-        <FormattedDate date={post.data.pubDate} />
-        {
-          post.data.updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={post.data.updatedDate} />
-            </div>
-          )
-        }
+  <div class="border-b-2 border-border border-dashed relative">
+    <div class="grid-bg"></div>
+    <div
+      class="sm:mx-12 border-border border-x-2 border-dashed px-6 relative z-20"
+    >
+      <div class="prose dark:prose-invert mx-auto py-12">
+        <div class="title">
+          <div class="date">
+            <FormattedDate date={post.data.pubDate} />
+            {
+              post.data.updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={post.data.updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1 transition:name={post.data.title}>{post.data.title}</h1>
+        </div>
       </div>
-      <h1 transition:name={post.data.title}>{post.data.title}</h1>
-      <hr />
     </div>
-    <Content />
+  </div>
+
+  <div class="sm:mx-12 border-border border-x-2 border-dashed px-6">
+    <div class="prose dark:prose-invert mx-auto py-12">
+      <Content />
+    </div>
   </div>
 </Layout>

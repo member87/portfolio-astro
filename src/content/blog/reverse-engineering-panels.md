@@ -14,7 +14,7 @@ There is also a free option which requires watching an advert for every single w
 you want to download but this will only allow you to download the
 standard definition version of a wallpaper and not the full heroImage.
 
-With this knowlege I wondered if it was possible to get the full HD images
+With this knowledge I wondered if it was possible to get the full HD images
 for free.
 
 ## Preparing the app for MITM
@@ -25,7 +25,7 @@ HTTP requests that an app makes. There are many tools available to do this type 
 reconnaissance, one of which is [mitmproxy](https://mitmproxy.org/).
 
 This app works by creating a proxy server and connecting your device to it. It can also
-create a certificate to decrypt HTTPS traffic (which is important). Unfortunatly, since
+create a certificate to decrypt HTTPS traffic (which is important). Unfortunately, since
 android 7, [apps will ignore user defined certificates](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html)
 by default and would need to explicitly opt in. Most apps will not opt in to this as
 they have no reason to, this means we need to patch the app.
@@ -71,7 +71,7 @@ of these requests is this:
 
 ![mitmweb user interface](/panels/mitmweb.png)
 
-We can see that in the resposne we get the following data:
+We can see that in the response we get the following data:
 
 ```json
 {
@@ -87,7 +87,7 @@ We can see that in the resposne we get the following data:
 ```
 
 In the data, each item has a link to the full HD version of the image. This means
-we have the entire app wallpaper libary for free, in high definition, completly
+we have the entire app wallpaper library for free, in high definition, completely
 bypassing any paywalls.
 
 The images are available in a public repository without any authentication required.

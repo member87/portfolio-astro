@@ -17,28 +17,39 @@ const { Content } = await project.render();
 ---
 
 <Layout title={project.data.title}>
-  <article class="mx-6">
-    <div class="prose mx-auto dark:prose-invert">
-      <div class="title">
-        <h1 class="text-center">
-          {project.data.title}
-        </h1>
-
-        <hr />
+  <article class="">
+    <div class="border-b-2 border-border border-dashed relative">
+      <div class="grid-bg"></div>
+      <div
+        class="border-x-2 border-border border-dashed py-12 sm:mx-12 relative z-20"
+      >
+        <div class="prose dark:prose-invert mx-auto">
+          <div class="title">
+            <h1 class="text-center">
+              {project.data.title}
+            </h1>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <Content />
-      {
-        project.data?.url && (
-          <a
-            href={`https://github.com/member87/${project.data.url}`}
-            class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
-          >
-            <Icon name="simple-icons:github" class="text-xl" />
-            <span class="mr-2 text-sm">View on GitHub</span>
-          </a>
-        )
-      }
+    <div class="border-b-2 border-border border-dashed mb-12">
+      <div class="border-x-2 border-border border-dashed sm:mx-12 px-6">
+        <div class="prose mx-auto dark:prose-invert py-12">
+          <Content />
+          {
+            project.data?.url && (
+              <a
+                href={`https://github.com/member87/${project.data.url}`}
+                class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
+              >
+                <Icon name="simple-icons:github" class="text-xl" />
+                <span class="mr-2 text-sm">View on GitHub</span>
+              </a>
+            )
+          }
+        </div>
+      </div>
     </div>
   </article>
 </Layout>

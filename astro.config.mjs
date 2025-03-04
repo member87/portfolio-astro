@@ -12,4 +12,12 @@ export default defineConfig({
   output: "static",
   site: "https://example.com",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
+  markdown: {
+    shikiConfig: {
+      themes: {
+        dark: "material-theme-darker",
+        light: "catppuccin-latte",
+      },
+    },
+  },
 });

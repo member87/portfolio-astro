@@ -21,13 +21,14 @@ import { Icon } from "astro-icon/components";
 </script>
 
 <header
-  class="sticky top-2 z-50 mx-auto mt-2 max-w-fit rounded-full bg-muted p-2 text-foreground shadow-lg"
+  class="sticky top-0 z-50 border-b-2 border-dashed border-border bg-background/70 text-foreground backdrop-blur sm:px-12"
 >
-  <nav>
+  <nav class="border-x-2 border-dashed border-muted px-4 py-2 sm:px-12">
     <div class="flex content-center items-center gap-2">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/project">Projects</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
+      <div class="flex-1"></div>
       <button
         id="themeToggle"
         class="grid size-8 place-content-center rounded bg-secondary text-2xl"
