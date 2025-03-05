@@ -11,7 +11,10 @@ import { Icon } from "astro-icon/components";
 
 // Sort blog posts by publication date and get the latest two
 const latestBlogPosts = blogPosts
-  .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+  )
   .slice(0, 2);
 ---
 
