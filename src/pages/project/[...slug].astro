@@ -18,13 +18,13 @@ const { Content } = await project.render();
 
 <Layout title={project.data.title}>
   <article class="">
-    <div class="border-b-2 border-border border-dashed relative">
+    <div class="relative border-b-2 border-dashed border-border">
       <div class="grid-bg"></div>
       <div
-        class="border-x-2 border-border border-dashed py-12 sm:mx-12 relative z-20"
+        class="relative z-20 border-x-2 border-dashed border-border py-12 sm:mx-12"
       >
-        <div class="prose dark:prose-invert mx-auto">
-          <div class="title">
+        <div class="prose mx-auto dark:prose-invert">
+          <div>
             <h1 class="text-center">
               {project.data.title}
             </h1>
@@ -33,15 +33,15 @@ const { Content } = await project.render();
       </div>
     </div>
 
-    <div class="border-b-2 border-border border-dashed mb-12">
-      <div class="border-x-2 border-border border-dashed sm:mx-12 px-6">
-        <div class="prose mx-auto dark:prose-invert py-12">
+    <div class="mb-12 border-b-2 border-dashed border-border">
+      <div class="border-x-2 border-dashed border-border px-6 sm:mx-12">
+        <div class="prose mx-auto py-12 dark:prose-invert">
           <Content />
           {
             project.data?.url && (
               <a
                 href={`https://github.com/member87/${project.data.url}`}
-                class="bg-[#181717] text-white inline-flex gap-2 p-2 rounded-full mx-auto justify-center items-center"
+                class="mx-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#181717] p-2 text-white"
               >
                 <Icon name="simple-icons:github" class="text-xl" />
                 <span class="mr-2 text-sm">View on GitHub</span>
