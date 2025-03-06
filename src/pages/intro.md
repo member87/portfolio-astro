@@ -5,7 +5,7 @@ export const jack = new Developer({
         jobTitle: "Junior Web Developer",
     }),
     company: {
-        name: "Imegamedia",
+        name: "NewDay",
         start: new Date(2023, 7),
     },
     frameworks: ["react", "nextjs"],
