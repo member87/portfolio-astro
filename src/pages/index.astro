@@ -81,12 +81,12 @@ const latestBlogPosts = blogPosts
                     </h3>
                   </div>
 
-                  <div class="inline whitespace-nowrap rounded-sm  px-2 py-1 text-xs text-foreground/90">
+                  <div class="inline-flex whitespace-nowrap rounded-sm  px-2 py-1 text-xs text-foreground/90 items-center justify-center gap-1">
                     {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
                       month: "long",
                       year: "numeric",
                     })}
-                    -{" "}
+                    -
                     {exp.data.endDate
                       ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
                           month: "long",
@@ -95,7 +95,7 @@ const latestBlogPosts = blogPosts
                       : "Present"}
                     <Icon name="lucide:dot" />
                     <span
-                      class="duration-span ml-2 whitespace-nowrap text-xs text-foreground"
+                      class="duration-span whitespace-nowrap text-xs text-foreground"
                       data-start={exp.data.startDate}
                       data-end={exp.data.endDate ? exp.data.endDate : null}
                     />
