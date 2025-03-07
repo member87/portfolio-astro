@@ -16,7 +16,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout {...post.data}>
+<Layout {...post.data} description={post.data.description}>
   <div class="relative border-b-2 border-dashed border-border">
     <div class="grid-bg"></div>
     <div
