@@ -17,10 +17,10 @@ const posts = (await getCollection("blog")).sort(
       >
         {
           posts.map(async (post) => (
-            <li class="block h-full rounded hover:bg-muted/40">
+            <li class="block h-full rounded-sm hover:bg-muted/40">
               <a
                 href={`/blog/${post.slug}/`}
-                class="block h-full border-dashed border-border shadow-sm"
+                class="block h-full border-dashed border-border shadow-xs"
               >
                 <div class="p-4 md:p-8">
                   <p class="flex items-center gap-0.5 text-sm text-foreground/60">

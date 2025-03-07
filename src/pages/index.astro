@@ -39,20 +39,20 @@ const latestBlogPosts = blogPosts
         <div class="mt-2">
           <a
             href="/project"
-            class="inline-flex items-center gap-1 rounded bg-primary p-2 px-5 text-background"
+            class="inline-flex items-center gap-1 rounded-sm bg-primary p-2 px-5 text-background"
             >Projects
 
             <Icon name="ic:outline-keyboard-arrow-right" class="size-6" />
           </a>
           <a
             href="/blog"
-            class="inline-flex items-center rounded border border-border bg-background p-2 px-5 text-foreground"
+            class="inline-flex items-center rounded-sm border border-border bg-background p-2 px-5 text-foreground"
             >Read My Blog
           </a>
         </div>
       </div>
       <div
-        class="hidden rounded border-2 border-border md:block [&>*]:p-4 [&>*]:px-8"
+        class="hidden rounded-sm border-2 border-border md:block *:p-4 *:px-8"
       >
         <Intro />
       </div>
@@ -60,7 +60,7 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-sm backdrop-blur-2xl sm:px-12"
+    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
   >
     <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
@@ -81,7 +81,7 @@ const latestBlogPosts = blogPosts
                     </h3>
                   </div>
 
-                  <div class="inline whitespace-nowrap rounded  px-2 py-1 text-xs text-foreground/90">
+                  <div class="inline whitespace-nowrap rounded-sm  px-2 py-1 text-xs text-foreground/90">
                     {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
                       month: "long",
                       year: "numeric",
@@ -93,6 +93,7 @@ const latestBlogPosts = blogPosts
                           year: "numeric",
                         })
                       : "Present"}
+                    <Icon name="lucide:dot" />
                     <span
                       class="duration-span ml-2 whitespace-nowrap text-xs text-foreground"
                       data-start={exp.data.startDate}
@@ -118,7 +119,7 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-sm backdrop-blur-2xl sm:px-12"
+    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
   >
     <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
@@ -165,7 +166,7 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 mb-12 border-b-2 border-dashed border-border text-foreground shadow-sm backdrop-blur-2xl sm:px-12"
+    class="relative z-30 mb-12 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
   >
     <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
