@@ -1,17 +1,16 @@
+import { defineConfig } from "eslint-define-config";
 import eslintPluginAstro from "eslint-plugin-astro";
-import tailwind from "eslint-plugin-tailwindcss";
-import eslintConfigPrettier from "eslint-config-prettier";
 
-export default [
-  // add more generic rule sets here, such as:
-  // js.configs.recommended,
+export default defineConfig([
+  // Base recommended configuration
   ...eslintPluginAstro.configs.recommended,
-  ...tailwind.configs["flat/recommended"],
+
+  // Custom rules and file-specific configuration
   {
+    files: ["**/*.astro"],
+    processor: "astro/client-side-ts",
     rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
+      // Add your rules for .astro files here
     },
   },
-  eslintConfigPrettier,
-];
+]);
