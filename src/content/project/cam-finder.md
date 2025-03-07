@@ -1,7 +1,7 @@
 ---
 title: "Cam Finder"
 description: "Find ACTi NV3.0 cameras with factroy default passwords."
-tech: ["Python", "Censys", "Shodan"]
+tech: ["Python"]
 url: "cam-finder"
 loadFactor: 1
 ---

@@ -94,10 +94,6 @@ const icons: {
     icons[tech]?.color,
   )}
 >
-  {
-    icons[tech] && (
-      <Icon name={icons[tech].icon} class="w-4 h-4 inline-block mr-1" />
-    )
-  }
+  {icons[tech] && <Icon name={icons[tech].icon} class="inline-block size-4" />}
   {tech}
 </span>
