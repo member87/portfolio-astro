@@ -1,8 +1,8 @@
 ---
 title: "Reverse Engineering Panels App"
 description:
-  "No authentication and authorisation can allow you to access free wallpapers
-  in the Panels app by MKBHD by using public the publically accessible API."
+    "No authentication and authorisation can allow you to access free wallpapers
+    in the Panels app by MKBHD by using public the publically accessible API."
 pubDate: "28 Sep 2024"
 heroImage: "/blog-placeholder-1.jpg"
 tags: ["Android", "MITM", "Reverse Engineering"]

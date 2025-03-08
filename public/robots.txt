@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jackhumes.com/sitemap-index.xml
