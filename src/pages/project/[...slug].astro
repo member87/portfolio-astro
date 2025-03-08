@@ -16,7 +16,7 @@ const project = Astro.props;
 const { Content } = await project.render();
 ---
 
-<Layout title={project.data.title} description="">
+<Layout title={project.data.title} description={project.data.description}>
   <article class="">
     <div class="border-border relative border-b-2 border-dashed">
       <div class="grid-bg"></div>
