@@ -3,7 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -55,4 +55,4 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
   src="https://umami.member87.xyz/script.js"
   data-website-id="e98155ad-cb2f-41ec-8f9a-92cb370305ac"></script>
 
-<ViewTransitions />
+<ClientRouter />

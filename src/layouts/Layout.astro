@@ -3,7 +3,7 @@ import "../styles/global.css";
 
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const { title, description } = Astro.props;
 ---
@@ -31,7 +31,7 @@ const { title, description } = Astro.props;
 <html>
   <head>
     <BaseHead title={`${title} | Jack Humes`} description={description} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
   <body class="bg-background">

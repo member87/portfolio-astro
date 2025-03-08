@@ -23,15 +23,15 @@ const latestBlogPosts = blogPosts
   description="Fullstack web developer using NextJS and React."
 >
   <div
-    class="relative items-center justify-center border-b-2 border-dashed border-border"
+    class="border-border relative items-center justify-center border-b-2 border-dashed"
   >
     <div class="grid-bg"></div>
     <div
-      class="relative z-20 flex min-h-[600px] flex-col items-center justify-center gap-10 border-x-2 border-dashed border-border p-4 sm:mx-12 lg:flex-row"
+      class="border-border relative z-20 flex min-h-[600px] flex-col items-center justify-center gap-10 border-x-2 border-dashed p-4 sm:mx-12 lg:flex-row"
     >
       <div class="max-w-[600px] px-4">
-        <h1 class="mb-4 text-6xl text-foreground">{NAME}</h1>
-        <p class="text-lg leading-loose text-foreground/90">
+        <h1 class="text-foreground mb-4 text-6xl">{NAME}</h1>
+        <p class="text-foreground/90 text-lg leading-loose">
           I'm a fullstack web developer currently working with Laravel and PHP
           professionally. In all my personal projects I primarily use NextJS and
           React.
@@ -39,20 +39,20 @@ const latestBlogPosts = blogPosts
         <div class="mt-2">
           <a
             href="/project"
-            class="inline-flex items-center gap-1 rounded-sm bg-primary p-2 px-5 text-background"
+            class="bg-primary text-background inline-flex items-center gap-1 rounded-sm p-2 px-5"
             >Projects
 
             <Icon name="ic:outline-keyboard-arrow-right" class="size-6" />
           </a>
           <a
             href="/blog"
-            class="inline-flex items-center rounded-sm border border-border bg-background p-2 px-5 text-foreground"
+            class="border-border bg-background text-foreground inline-flex items-center rounded-sm border p-2 px-5"
             >Read My Blog
           </a>
         </div>
       </div>
       <div
-        class="hidden rounded-sm border-2 border-border md:block *:p-4 *:px-8"
+        class="border-border hidden rounded-sm border-2 *:p-4 *:px-8 md:block"
       >
         <Intro />
       </div>
@@ -60,9 +60,9 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
+    class="border-border text-foreground relative z-30 border-b-2 border-dashed shadow-xs backdrop-blur-2xl sm:px-12"
   >
-    <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
+    <div class="border-border border-x-2 border-dashed p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
         <h2 class="text-2xl font-semibold">Work Experience</h2>
         <div class="mb-12"></div>
@@ -77,11 +77,11 @@ const latestBlogPosts = blogPosts
                   <div class="flex flex-1 gap-1">
                     <h3 class="mb-2 text-lg">
                       {exp.data.company}
-                      <span class="font-semibold ">- {exp.data.jobTitle}</span>
+                      <span class="font-semibold">- {exp.data.jobTitle}</span>
                     </h3>
                   </div>
 
-                  <div class="inline-flex whitespace-nowrap rounded-sm  px-2 py-1 text-xs text-foreground/90 items-center justify-center gap-1">
+                  <div class="text-foreground/90 inline-flex items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs whitespace-nowrap">
                     {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
                       month: "long",
                       year: "numeric",
@@ -95,14 +95,14 @@ const latestBlogPosts = blogPosts
                       : "Present"}
                     <Icon name="lucide:dot" />
                     <span
-                      class="duration-span whitespace-nowrap text-xs text-foreground"
+                      class="duration-span text-foreground text-xs whitespace-nowrap"
                       data-start={exp.data.startDate}
                       data-end={exp.data.endDate ? exp.data.endDate : null}
                     />
                   </div>
                 </div>
 
-                <div class="prose mt-4 max-w-full dark:prose-invert md:mt-0">
+                <div class="prose dark:prose-invert mt-4 max-w-full md:mt-0">
                   <Content />
                 </div>
 
@@ -119,9 +119,9 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
+    class="border-border text-foreground relative z-30 border-b-2 border-dashed shadow-xs backdrop-blur-2xl sm:px-12"
   >
-    <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
+    <div class="border-border border-x-2 border-dashed p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
         <h2 class="text-2xl font-semibold">Latest Blog Posts</h2>
         <div class="mb-12"></div>
@@ -129,7 +129,7 @@ const latestBlogPosts = blogPosts
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
           {
             latestBlogPosts.map((post) => (
-              <div class="mb-8 rounded-lg border border-border p-5">
+              <div class="border-border mb-8 rounded-lg border p-5">
                 <div class="mb-6 flex items-start gap-2">
                   <h3 class="grow text-xl font-semibold">
                     <a
@@ -139,7 +139,7 @@ const latestBlogPosts = blogPosts
                       {post.data.title}
                     </a>
                   </h3>
-                  <span class="m-1 whitespace-nowrap rounded-full border border-border/70 px-2 text-xs text-primary/70">
+                  <span class="border-border/70 text-primary/70 m-1 rounded-full border px-2 text-xs whitespace-nowrap">
                     {new Date(post.data.pubDate).toLocaleDateString("en-GB", {
                       day: "numeric",
                       month: "long",
@@ -147,12 +147,12 @@ const latestBlogPosts = blogPosts
                     })}
                   </span>
                 </div>
-                <p class="text-sm text-foreground/70">
+                <p class="text-foreground/70 text-sm">
                   {post.data.description}
                 </p>
                 <a
                   href={`/blog/${post.slug}`}
-                  class="mt-4 inline-flex items-center gap-1 text-primary underline-offset-4 hover:underline"
+                  class="text-primary mt-4 inline-flex items-center gap-1 underline-offset-4 hover:underline"
                 >
                   Read more
                   <Icon name="lucide:arrow-right" />
@@ -166,9 +166,9 @@ const latestBlogPosts = blogPosts
   </div>
 
   <div
-    class="relative z-30 mb-12 border-b-2 border-dashed border-border text-foreground shadow-xs backdrop-blur-2xl sm:px-12"
+    class="border-border text-foreground relative z-30 mb-12 border-b-2 border-dashed shadow-xs backdrop-blur-2xl sm:px-12"
   >
-    <div class="border-x-2 border-dashed border-border p-8 sm:p-12 md:p-24">
+    <div class="border-border border-x-2 border-dashed p-8 sm:p-12 md:p-24">
       <div class="mx-auto max-w-[1000px]">
         <h2 class="text-2xl font-semibold">Contact</h2>
         <div class="mb-12"></div>
@@ -186,10 +186,10 @@ const latestBlogPosts = blogPosts
             <a
               href="https://linkedin.com/in/jackhumes"
               target="_blank"
-              class="flex items-center gap-4 rounded-lg border border-border p-4"
+              class="border-border flex items-center gap-4 rounded-lg border p-4"
             >
-              <div class="rounded-full border border-border p-4">
-                <Icon name="lucide:linkedin" class="size-6 text-primary" />
+              <div class="border-border rounded-full border p-4">
+                <Icon name="lucide:linkedin" class="text-primary size-6" />
               </div>
               <div>
                 <div class="text-lg font-semibold">LinkedIn</div>
@@ -198,10 +198,10 @@ const latestBlogPosts = blogPosts
             </a>
             <a
               href="mailto:contact@jackhumes.com"
-              class="flex items-center gap-4 rounded-lg border border-border p-4"
+              class="border-border flex items-center gap-4 rounded-lg border p-4"
             >
-              <div class="rounded-full border border-border p-4">
-                <Icon name="lucide:mail" class="size-6 text-primary" />
+              <div class="border-border rounded-full border p-4">
+                <Icon name="lucide:mail" class="text-primary size-6" />
               </div>
               <div>
                 <div class="text-lg font-semibold">Email</div>
@@ -211,10 +211,10 @@ const latestBlogPosts = blogPosts
             <a
               href="https://github.com/jackhumes"
               target="_blank"
-              class="flex items-center gap-4 rounded-lg border border-border p-4"
+              class="border-border flex items-center gap-4 rounded-lg border p-4"
             >
-              <div class="rounded-full border border-border p-4">
-                <Icon name="lucide:github" class="size-6 text-primary" />
+              <div class="border-border rounded-full border p-4">
+                <Icon name="lucide:github" class="text-primary size-6" />
               </div>
               <div>
                 <div class="text-lg font-semibold">GitHub</div>
@@ -226,36 +226,36 @@ const latestBlogPosts = blogPosts
       </div>
     </div>
   </div>
-
-  <script is:inline>
-    // Client-side function to calculate the duration between two dates
-    const calculateDuration = (start, end) => {
-      const totalMonths =
-        (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30);
-
-      const years = Math.floor(totalMonths / 12);
-      const months = Math.round(totalMonths % 12);
-
-      if (years > 0) {
-        return `${years} yr${years > 1 ? "s" : ""}, ${months} mo${months !== 1 ? "s" : ""}`;
-      }
-      return `${months} mo${months !== 1 ? "s" : ""}`;
-    };
-
-    // Run this code after the page is fully loaded
-    window.addEventListener("DOMContentLoaded", () => {
-      // Get all elements with the class 'duration-span'
-      const durationElements = document.querySelectorAll(".duration-span");
-
-      // For each span element, calculate and update the duration
-      durationElements.forEach((el) => {
-        const startDate = new Date(el.getAttribute("data-start"));
-        const endDate = el.getAttribute("data-end")
-          ? new Date(el.getAttribute("data-end"))
-          : new Date();
-        const duration = calculateDuration(startDate, endDate);
-        el.textContent = duration;
-      });
-    });
-  </script>
 </Layout>
+
+<script is:inline>
+  // Client-side function to calculate the duration between two dates
+  const calculateDuration = (start, end) => {
+    const totalMonths =
+      (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30);
+
+    const years = Math.floor(totalMonths / 12);
+    const months = Math.round(totalMonths % 12);
+
+    if (years > 0) {
+      return `${years} yr${years > 1 ? "s" : ""}, ${months} mo${months !== 1 ? "s" : ""}`;
+    }
+    return `${months} mo${months !== 1 ? "s" : ""}`;
+  };
+
+  // Run this code after the page is fully loaded
+  document.addEventListener("astro:page-load", (e) => {
+    // Get all elements with the class 'duration-span'
+    const durationElements = document.querySelectorAll(".duration-span");
+
+    // For each span element, calculate and update the duration
+    durationElements.forEach((el) => {
+      const startDate = new Date(el.getAttribute("data-start"));
+      const endDate = el.getAttribute("data-end")
+        ? new Date(el.getAttribute("data-end"))
+        : new Date();
+      const duration = calculateDuration(startDate, endDate);
+      el.textContent = duration;
+    });
+  });
+</script>
