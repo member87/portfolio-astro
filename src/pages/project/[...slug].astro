@@ -18,12 +18,12 @@ const { Content } = await project.render();
 
 <Layout title={project.data.title} description="">
   <article class="">
-    <div class="relative border-b-2 border-dashed border-border">
+    <div class="border-border relative border-b-2 border-dashed">
       <div class="grid-bg"></div>
       <div
-        class="relative z-20 border-x-2 border-dashed border-border py-12 sm:mx-12"
+        class="border-border relative z-20 border-x-2 border-dashed py-12 sm:mx-12"
       >
-        <div class="prose mx-auto dark:prose-invert">
+        <div class="prose dark:prose-invert mx-auto">
           <div>
             <h1 class="text-center">
               {project.data.title}
@@ -33,9 +33,9 @@ const { Content } = await project.render();
       </div>
     </div>
 
-    <div class="mb-12 border-b-2 border-dashed border-border">
-      <div class="border-x-2 border-dashed border-border px-6 sm:mx-12">
-        <div class="prose mx-auto py-12 dark:prose-invert">
+    <div class="border-border border-b-2 border-dashed">
+      <div class="border-border border-x-2 border-dashed px-6 sm:mx-12">
+        <div class="prose dark:prose-invert mx-auto py-12">
           <Content />
           {
             project.data?.url && (
