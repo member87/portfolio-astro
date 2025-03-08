@@ -23,5 +23,4 @@ dynamically, providing an interactive and data-driven experience.
 
 Although this portfolio served its purpose well, it has since been replaced by
 **[portfolio-astro](/project/portfolio-astro)**, which offers improved
-performance and a better developer experience.  
-tro)
+performance and a better developer experience.
