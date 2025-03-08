@@ -6,21 +6,27 @@ url: "image-upload-server"
 loadFactor: 1
 ---
 
-Image upload server is a small project written in NextJS and React.
-It is used for uploading screenshots to so that they can be shared
-around.
+## Image Upload Server
 
-I have a script which will automatically screenshot, upload
-and add the URL to your clipboard:
+This is a lightweight image upload server built with Next.js and React, designed
+for quickly sharing screenshots.
+
+I’ve also created a script that automates the process:
+
+- Captures a selected area of the screen
+- Uploads the image
+- Copies the URL to the clipboard
+- Sends a notification once complete
 
 ```bash
 #!/bin/bash
-maim -s | base64 | jq --slurp -R '{input: ., "key": "<hidden>"}' | curl -X POST -d @- https://i.jackhumes.com/api/v1/screenshot | jq -r '.url' | xclip -selection clipboard
+maim -s | base64 | jq --slurp -R '{input: ., "key": "<hidden>"}' | \
+curl -X POST -d @- https://i.jackhumes.com/api/v1/screenshot | \
+jq -r '.url' | xclip -selection clipboard
 notify-send "Screenshot uploaded and URL copied to clipboard"
 ```
 
-There is an admin dashboard which allows you to login and manage
-all your images. You can view when they were created and delete them.
+An admin dashboard provides a way to log in, manage images, view creation
+timestamps, and delete uploads as needed.
 
-The upload server is hosted on Vercel and all images are
-saved to an S3 bucket.
+The server is hosted on Vercel, with all images stored in an S3 bucket.

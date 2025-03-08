@@ -6,10 +6,18 @@ url: "panels-free"
 loadFactor: 5
 ---
 
-This is a simple site I created to view publically available wallpapers
-from MKBHD's Panels app. There is a [blog post](/blog/reverse-engineering-panels/) going
-into more detail about how I reversed engineered the app to find all
-the wallpapers.
+## MKBHD Panels Wallpaper Viewer
 
-The site is hosted at [panels.member87.xyz](https://panels.member87.xyz) and there
-is an archive link which can be found on the [wayback machine](https://web.archive.org/save/https://panels.member87.xyz).
+This is a simple web app I built to browse publicly available wallpapers from
+MKBHD's **Panels** app.
+
+Curious about how I accessed these wallpapers? I wrote a
+**[blog post](/blog/reverse-engineering-panels/)** detailing the reverse
+engineering process I used to uncover and retrieve them.
+
+### Access the Site
+
+🔗 **Live Version:** [panels.member87.xyz](https://panels.member87.xyz)  
+🕰 **Archived Version:** Available on the [Wayback Machine](insert-link)
+
+ve.org/save/https://panels.member87.xyz).
