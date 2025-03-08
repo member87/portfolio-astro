@@ -10,7 +10,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   output: "static",
-  site: "https://example.com",
+  site: "https://jackhumes.com",
   integrations: [mdx(), sitemap(), icon()],
 
   markdown: {
