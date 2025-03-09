@@ -30,7 +30,7 @@ introduction into Linux but it always felt like there was something missing.
 
 While using Ubuntu, I had heard many positive things about Arch Linux and how it
 was considered to be a "difficult" / "challenging" distro. Many people had
-commented on it rolling releases, and the AUR (Arch User Repository) which
+commented on its rolling releases, and the AUR (Arch User Repository) which
 included a large selection of software.
 
 In 2020, I made the move over to Arch Linux. I completely wiped my laptop, only
@@ -40,11 +40,11 @@ games. While the installation of Arch isn't as difficult as people had made it
 out to be, it was a very informative and educational process.
 
 When I first installed Arch, I started off by using KDE Plasma which is a full
-desktop environment. While I liked KDE it always felt like there was so much
+desktop environment. While I liked, KDE it always felt like there was so much
 stuff that I rarely / never used. This then had lead me to discovering i3 and
-tiling window managers in general, which ended up vastly improving my workflow
-and development productivity. Arch Linux + i3 felt perfect for me as it gave me
-full control over the entire system and how everything worked.
+tiling window managers in general, which vastly improved my workflow and
+development productivity. Arch Linux + i3 felt perfect for me as it gave me full
+control over the entire system and how everything worked.
 
 While Arch Linux did work very well for me, there were a few _rare_ occasions
 where an update may stop my system from booting or just outright stop software
@@ -56,7 +56,7 @@ edge and more about system stability.
 
 In 2024, I made the move over to NixOS. When compared to Arch, NixOS was
 significantly more complicated and has a much higher learning curve. Even
-installing packages is a slightly more involved process than arch:
+installing packages is a slightly more involved process than Arch:
 
 ### Installation on Arch
 
@@ -95,9 +95,10 @@ that is required is cloning the repo and rebuilding with the flake. Then, all
 your programs, themes, and preferences will be set up and ready to go.
 
 It's also not only the system configuration that can be controlled through Nix,
-so can the users home folder. There is a tool called Home Manager that
-integrates with NixOS and allows user configurations (such as dotfiles) to be
-managed declaratively with Nix.
+so can the users home folder. There is a tool called
+[Home Manager](https://nix-community.github.io/home-manager/) that integrates
+with NixOS and allows user configurations (such as dotfiles) to be managed
+declaratively with Nix.
 
 I have my NixOS configuration in a Github repo that can be found at
 [member87/nixos](https://github.com/member87/nixos).
