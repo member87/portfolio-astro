@@ -135,13 +135,13 @@
     linear-gradient(to bottom, #80808008 1px, transparent 1px);
 }
 
-.prose code::before,
-.prose code::after {
+.prose :not(.astro-code) code::before,
+.prose :not(.astro-code) code::after {
   content: "" !important;
 }
 
-.prose code,
-.prose code {
+.prose :not(.astro-code) code,
+.prose :not(.astro-code) code {
   background-color: var(--color-secondary);
   padding: 0 calc(var(--spacing) * 1);
   border-radius: 0.25rem;
