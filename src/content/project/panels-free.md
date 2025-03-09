@@ -19,5 +19,3 @@ engineering process I used to uncover and retrieve them.
 
 🔗 **Live Version:** [panels.member87.xyz](https://panels.member87.xyz)  
 🕰 **Archived Version:** Available on the [Wayback Machine](insert-link)
-
-ve.org/save/https://panels.member87.xyz).
