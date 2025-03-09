@@ -134,3 +134,15 @@
     linear-gradient(to right, #80808008 1px, transparent 1px),
     linear-gradient(to bottom, #80808008 1px, transparent 1px);
 }
+
+.prose code::before,
+.prose code::after {
+  content: "" !important;
+}
+
+.prose code,
+.prose code {
+  background-color: var(--color-secondary);
+  padding: 0 calc(var(--spacing) * 1);
+  border-radius: 0.25rem;
+}
