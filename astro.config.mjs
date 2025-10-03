@@ -8,6 +8,8 @@ import { remarkReadingTime } from "./src/remark-reading-time.mjs";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   output: "static",
   site: "https://jackhumes.com",
@@ -26,4 +28,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
