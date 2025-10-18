@@ -1,8 +1,9 @@
 ---
 company: "NewDay"
 startDate: "Aug 2023"
+endDate: "Dec 2025"
 jobTitle: "Junior Web Developer"
-tech: ["PHP", "Laravel", "JavaScript", "MYSQL"]
+tech: ["PHP", "Laravel", "JavaScript", "MYSQL", "Typescript", "React"]
 ---
 
 - Developed and maintained **PHP**-based applications using **Laravel** to build

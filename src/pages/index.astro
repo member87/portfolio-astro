@@ -67,53 +67,59 @@ const latestBlogPosts = blogPosts
         <h2 class="text-2xl font-semibold">Work Experience</h2>
         <div class="mb-12"></div>
 
-        {
-          experience.map(async (exp) => {
-            const { Content } = await exp.render();
+        <div class="flex flex-col gap-16">
+          {
+            experience.map(async (exp) => {
+              const { Content } = await exp.render();
 
-            return (
-              <div class="">
-                <div class="flex flex-col sm:flex-row">
-                  <div class="flex flex-1 gap-1">
-                    <h3 class="mb-2 text-lg">
-                      {exp.data.company}
-                      <span class="font-semibold">- {exp.data.jobTitle}</span>
-                    </h3>
-                  </div>
+              return (
+                <div>
+                  <div class="flex flex-col sm:flex-row">
+                    <div class="flex-1">
+                      <h3 class="mb-2 text-lg font-bold">{exp.data.company}</h3>
+                      <h4>{exp.data.jobTitle}</h4>
+                    </div>
 
-                  <div class="text-foreground/90 inline-flex items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs whitespace-nowrap">
-                    {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
-                      month: "long",
-                      year: "numeric",
-                    })}
-                    -
-                    {exp.data.endDate
-                      ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
+                    <div class="text-foreground/90 inline-flex items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs whitespace-nowrap">
+                      {new Date(exp.data.startDate).toLocaleDateString(
+                        "en-GB",
+                        {
                           month: "long",
                           year: "numeric",
-                        })
-                      : "Present"}
-                    <Icon name="lucide:dot" />
-                    <span
-                      class="duration-span text-foreground text-xs whitespace-nowrap"
-                      data-start={exp.data.startDate}
-                      data-end={exp.data.endDate ? exp.data.endDate : null}
-                    />
+                        },
+                      )}
+                      -
+                      {exp.data.endDate
+                        ? new Date(exp.data.endDate).toLocaleDateString(
+                            "en-GB",
+                            {
+                              month: "long",
+                              year: "numeric",
+                            },
+                          )
+                        : "Present"}
+                      <Icon name="lucide:dot" />
+                      <span
+                        class="duration-span text-foreground text-xs whitespace-nowrap"
+                        data-start={exp.data.startDate}
+                        data-end={exp.data.endDate ? exp.data.endDate : null}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="prose dark:prose-invert mt-4 max-w-full md:mt-0">
+                    <Content />
+                  </div>
+
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {exp.data.tech &&
+                      exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
                   </div>
                 </div>
-
-                <div class="prose dark:prose-invert mt-4 max-w-full md:mt-0">
-                  <Content />
-                </div>
-
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {exp.data.tech &&
-                    exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
-                </div>
-              </div>
-            );
-          })
-        }
+              );
+            })
+          }
+        </div>
       </div>
     </div>
   </div>
