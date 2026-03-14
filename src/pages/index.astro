@@ -18,43 +18,36 @@ const latestBlogPosts = blogPosts
   .slice(0, 2);
 ---
 
-<Layout
-  title="Home"
-  description="Fullstack web developer using NextJS and React."
->
+<Layout title="Home" description="Engineer at Deliveroo.">
   <div
     class="border-border relative items-center justify-center border-b-2 border-dashed"
   >
     <div class="grid-bg"></div>
     <div
-      class="border-border relative z-20 flex min-h-[600px] flex-col items-center justify-center gap-10 border-x-2 border-dashed p-4 sm:mx-12 lg:flex-row"
+      class="border-border relative z-20 flex min-h-[600px] gap-10 border-x-2 border-dashed p-4 p-8 sm:mx-12 sm:p-12 md:p-24 lg:flex-row"
     >
-      <div class="max-w-[600px] px-4">
-        <h1 class="text-foreground mb-4 text-6xl">{NAME}</h1>
-        <p class="text-foreground/90 text-lg leading-loose">
-          I'm a fullstack web developer currently working with Laravel and PHP
-          professionally. In all my personal projects I primarily use NextJS and
-          React.
-        </p>
-        <div class="mt-2">
-          <a
-            href="/project"
-            class="bg-primary text-background inline-flex items-center gap-1 rounded-sm p-2 px-5"
-            >Projects
+      <div class="mx-auto flex w-full max-w-[1000px] items-center">
+        <div class="max-w-[600px] px-4">
+          <h1 class="text-foreground mb-4 text-6xl">{NAME}</h1>
+          <p class="text-foreground/90 text-lg leading-loose">
+            I'm an software engineer working in the search & relevance team at
+            Deliveroo.
+          </p>
+          <div class="mt-2">
+            <a
+              href="/project"
+              class="bg-primary text-background inline-flex items-center gap-1 rounded-sm p-2 px-5"
+              >Projects
 
-            <Icon name="ic:outline-keyboard-arrow-right" class="size-6" />
-          </a>
-          <a
-            href="/blog"
-            class="border-border bg-background text-foreground inline-flex items-center rounded-sm border p-2 px-5"
-            >Read My Blog
-          </a>
+              <Icon name="ic:outline-keyboard-arrow-right" class="size-6" />
+            </a>
+            <a
+              href="/blog"
+              class="border-border bg-background text-foreground inline-flex items-center rounded-sm border p-2 px-5"
+              >Blog
+            </a>
+          </div>
         </div>
-      </div>
-      <div
-        class="border-border hidden rounded-sm border-2 *:p-4 *:px-8 md:block"
-      >
-        <Intro />
       </div>
     </div>
   </div>
@@ -67,53 +60,67 @@ const latestBlogPosts = blogPosts
         <h2 class="text-2xl font-semibold">Work Experience</h2>
         <div class="mb-12"></div>
 
-        {
-          experience.map(async (exp) => {
-            const { Content } = await exp.render();
+        <div class="flex flex-col gap-16">
+          {
+            experience
+              .sort(
+                (a, b) =>
+                  new Date(b.data.startDate).getTime() -
+                  new Date(a.data.startDate).getTime(),
+              )
+              .map(async (exp) => {
+                const { Content } = await exp.render();
 
-            return (
-              <div class="">
-                <div class="flex flex-col sm:flex-row">
-                  <div class="flex flex-1 gap-1">
-                    <h3 class="mb-2 text-lg">
-                      {exp.data.company}
-                      <span class="font-semibold">- {exp.data.jobTitle}</span>
-                    </h3>
+                return (
+                  <div>
+                    <div class="flex flex-col sm:flex-row">
+                      <div class="flex-1">
+                        <h3 class="mb-2 text-lg font-bold">
+                          {exp.data.company}
+                        </h3>
+                        <h4>{exp.data.jobTitle}</h4>
+                      </div>
+
+                      <div class="text-foreground/90 inline-flex items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs whitespace-nowrap">
+                        {new Date(exp.data.startDate).toLocaleDateString(
+                          "en-GB",
+                          {
+                            month: "long",
+                            year: "numeric",
+                          },
+                        )}
+                        -
+                        {exp.data.endDate
+                          ? new Date(exp.data.endDate).toLocaleDateString(
+                              "en-GB",
+                              {
+                                month: "long",
+                                year: "numeric",
+                              },
+                            )
+                          : "Present"}
+                        <Icon name="lucide:dot" />
+                        <span
+                          class="duration-span text-foreground text-xs whitespace-nowrap"
+                          data-start={exp.data.startDate}
+                          data-end={exp.data.endDate ? exp.data.endDate : null}
+                        />
+                      </div>
+                    </div>
+
+                    <div class="prose dark:prose-invert mt-4 max-w-full md:mt-0">
+                      <Content />
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap gap-2">
+                      {exp.data.tech &&
+                        exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
+                    </div>
                   </div>
-
-                  <div class="text-foreground/90 inline-flex items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs whitespace-nowrap">
-                    {new Date(exp.data.startDate).toLocaleDateString("en-GB", {
-                      month: "long",
-                      year: "numeric",
-                    })}
-                    -
-                    {exp.data.endDate
-                      ? new Date(exp.data.endDate).toLocaleDateString("en-GB", {
-                          month: "long",
-                          year: "numeric",
-                        })
-                      : "Present"}
-                    <Icon name="lucide:dot" />
-                    <span
-                      class="duration-span text-foreground text-xs whitespace-nowrap"
-                      data-start={exp.data.startDate}
-                      data-end={exp.data.endDate ? exp.data.endDate : null}
-                    />
-                  </div>
-                </div>
-
-                <div class="prose dark:prose-invert mt-4 max-w-full md:mt-0">
-                  <Content />
-                </div>
-
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {exp.data.tech &&
-                    exp.data.tech.map((tech) => <TechLabel tech={tech} />)}
-                </div>
-              </div>
-            );
-          })
-        }
+                );
+              })
+          }
+        </div>
       </div>
     </div>
   </div>
